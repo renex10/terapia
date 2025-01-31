@@ -1,0 +1,80 @@
+/* Transiciones y efectos */
+#sidebar {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#sidebarOverlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#sidebarToggle {
+    transition: all 0.2s ease-in-out;
+}
+
+#closeIcon {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#sidebarToggle:hover #closeIcon {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* Menú usuario */
+#userDropdown {
+    transition: all 0.2s ease-out;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+#userDropdown.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#userMenu:hover #userDropdown {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Mejoras visuales */
+.metric-card:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .metric-card {
+        padding: 1rem;
+    }
+    
+    .user-avatar {
+        display: none;
+    }
+    
+    #userMenu span {
+        display: none;
+    }
+}
