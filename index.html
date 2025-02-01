@@ -20,38 +20,154 @@
 <body class="bg-gray-50">
     <div class="flex">
         <!-- Sidebar -->
-        <aside id="sidebar" class="bg-gradient-to-b from-gray-800 to-gray-900 text-white w-64 min-h-screen fixed transition-transform duration-300 -translate-x-full md:translate-x-0 z-50 shadow-2xl">
-            <div class="p-6 border-b border-gray-700">
-                <div class="flex items-center space-x-3">
-                    <div class="h-10 w-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                        <i class="fa-solid fa-child text-xl"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold text-gray-100">Terapias Infantiles</h2>
-                </div>
+<aside id="sidebar" class="bg-gradient-to-b from-gray-800 to-gray-900 text-white w-64 min-h-screen fixed transition-transform duration-300 -translate-x-full md:translate-x-0 z-50 shadow-2xl">
+    <div class="p-6 border-b border-gray-700">
+        <div class="flex items-center space-x-3">
+            <div class="h-10 w-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                <i class="fa-solid fa-child text-xl"></i>
             </div>
-            <nav class="mt-4 px-3">
-                <ul class="space-y-2">
+            <h2 class="text-2xl font-bold text-gray-100">Terapias Infantiles</h2>
+        </div>
+    </div>
+    <nav class="mt-4 px-3">
+        <ul class="space-y-2">
+            <!-- Inicio -->
+            <li>
+                <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                    <i class="fa-solid fa-house mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                    <span class="text-gray-300 group-hover:text-white">Inicio</span>
+                </a>
+            </li>
+
+            <!-- Pacientes -->
+            <li class="has-submenu">
+                <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                    <i class="fa-solid fa-users mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                    <span class="text-gray-300 group-hover:text-white">Pacientes</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                </a>
+                <ul class="pl-6 mt-2 space-y-2">
                     <li>
-                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
-                            <i class="fa-solid fa-house mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
-                            <span class="text-gray-300 group-hover:text-white">Inicio</span>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-list mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Lista de Niños</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
-                            <i class="fa-solid fa-calendar-days mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
-                            <span class="text-gray-300 group-hover:text-white">Agenda</span>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-user mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Perfil del Niño</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
-                            <i class="fa-solid fa-chart-line mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
-                            <span class="text-gray-300 group-hover:text-white">Progresos</span>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-eye mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Observaciones del Niño</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-calendar-check mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Planificaciones (Escuela/Hogar)</span>
                         </a>
                     </li>
                 </ul>
-            </nav>
-        </aside>
+            </li>
+
+            <!-- Observaciones -->
+            <li class="has-submenu">
+                <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                    <i class="fa-solid fa-clipboard-list mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                    <span class="text-gray-300 group-hover:text-white">Observaciones</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                </a>
+                <ul class="pl-6 mt-2 space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-plus mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Registrar Observación</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-history mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Historial de Observaciones</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Feedback -->
+            <li class="has-submenu">
+                <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                    <i class="fa-solid fa-comments mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                    <span class="text-gray-300 group-hover:text-white">Feedback</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                </a>
+                <ul class="pl-6 mt-2 space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-paper-plane mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Enviar Feedback a la Escuela</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-envelope-open-text mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Revisar Feedback de la Escuela</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Documentos -->
+            <li class="has-submenu">
+                <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                    <i class="fa-solid fa-folder mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                    <span class="text-gray-300 group-hover:text-white">Documentos</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                </a>
+                <ul class="pl-6 mt-2 space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-upload mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Subir Documentos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-file-alt mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Ver Documentos del Niño</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Configuración -->
+            <li class="has-submenu">
+                <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                    <i class="fa-solid fa-gear mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                    <span class="text-gray-300 group-hover:text-white">Configuración</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                </a>
+                <ul class="pl-6 mt-2 space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-user-tie mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Perfil Profesional</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i class="fa-solid fa-key mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Cambiar Contraseña</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</aside>
 
         <!-- Contenido principal -->
         <main id="content" class="flex-1 md:ml-64 transition-all duration-300 min-h-screen">
@@ -120,7 +236,7 @@
                                 <img src="assets/img/imagen_perfil.jpg" 
                                      alt="Avatar" 
                                      class="w-9 h-9 rounded-full border-2 border-blue-200 object-cover">
-                                <span class="text-gray-700 hidden md:inline">Dra. Ana López</span>
+                                <span class="text-gray-700 hidden md:inline">Rene Riquelme </span>
                                 <i class="fa-solid fa-chevron-down text-gray-500 text-xs mr-2 hidden md:inline"></i>
                             </button>
 
@@ -146,7 +262,7 @@
                     </div>
                 </div>
             </header>
-
+     <!-- fion del Header -->
             <!-- Contenido principal -->
             <div class="p-6 space-y-6">
                 <!-- Tarjetas informativas -->
@@ -226,19 +342,56 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
+                                <!-- Pangal Riquelme -->
                                 <tr class="hover:bg-gray-50 transition-colors">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
-                                            <img src="https://via.placeholder.com/40" alt="Avatar" class="w-8 h-8 rounded-full mr-3">
+                                            <img src="assets/img/avatar_boy.png" alt="Avatar" class="w-8 h-8 rounded-full mr-3">
                                             <div>
-                                                <p class="text-gray-900 font-medium">Sofía Rodríguez</p>
+                                                <p class="text-gray-900 font-medium">Pangal Riquelme</p>
                                                 <p class="text-gray-500 text-sm">Terapia ocupacional</p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">8 años</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">11 años</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Motricidad fina</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                        Escuela Trompulo Chico, Padre Las Casas
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-24 h-2 bg-gray-200 rounded-full">
+                                                <div class="h-2 bg-green-500 rounded-full" style="width: 57%"></div>
+                                            </div>
+                                            <span class="ml-2 text-sm text-gray-600">57%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <button class="text-gray-400 hover:text-gray-600 p-2 rounded-lg hover:bg-gray-100">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            
+                                <!-- Sofía Rodríguez -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img src="assets/img/avatar_girl.png" alt="Avatar" class="w-8 h-8 rounded-full mr-3">
+                                            <div>
+                                                <p class="text-gray-900 font-medium">Sofía Rodríguez</p>
+                                                <p class="text-gray-500 text-sm">Terapia de lenguaje</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">8 años</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Comunicación</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                        Escuela Villa Educa, Temuco
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
@@ -254,7 +407,171 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <!-- Más filas... -->
+                            
+                                <!-- Benjamín González -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img src="assets/img/avatar_boy.png" alt="Avatar" class="w-8 h-8 rounded-full mr-3">
+                                            <div>
+                                                <p class="text-gray-900 font-medium">Benjamín González</p>
+                                                <p class="text-gray-500 text-sm">Terapia física</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">9 años</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Coordinación</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                        Colegio Santa María, Padre Las Casas
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-24 h-2 bg-gray-200 rounded-full">
+                                                <div class="h-2 bg-green-500 rounded-full" style="width: 63%"></div>
+                                            </div>
+                                            <span class="ml-2 text-sm text-gray-600">63%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <button class="text-gray-400 hover:text-gray-600 p-2 rounded-lg hover:bg-gray-100">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            
+                                <!-- Valentina Muñoz -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img src="assets/img/avatar_girl.png" alt="Avatar" class="w-8 h-8 rounded-full mr-3">
+                                            <div>
+                                                <p class="text-gray-900 font-medium">Valentina Muñoz</p>
+                                                <p class="text-gray-500 text-sm">Terapia conductual</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">10 años</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 bg-pink-100 text-pink-800 rounded-full text-xs">Socialización</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                        Escuela Los Laureles, Temuco
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-24 h-2 bg-gray-200 rounded-full">
+                                                <div class="h-2 bg-green-500 rounded-full" style="width: 82%"></div>
+                                            </div>
+                                            <span class="ml-2 text-sm text-gray-600">82%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <button class="text-gray-400 hover:text-gray-600 p-2 rounded-lg hover:bg-gray-100">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            
+                                <!-- Matías Herrera -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img src="assets/img/avatar_boy.png" alt="Avatar" class="w-8 h-8 rounded-full mr-3">
+                                            <div>
+                                                <p class="text-gray-900 font-medium">Matías Herrera</p>
+                                                <p class="text-gray-500 text-sm">Terapia de lenguaje</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">7 años</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Vocabulario</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                        Colegio San Francisco, Padre Las Casas
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-24 h-2 bg-gray-200 rounded-full">
+                                                <div class="h-2 bg-green-500 rounded-full" style="width: 68%"></div>
+                                            </div>
+                                            <span class="ml-2 text-sm text-gray-600">68%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <button class="text-gray-400 hover:text-gray-600 p-2 rounded-lg hover:bg-gray-100">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            
+                                <!-- Antonia Silva -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img src="assets/img/avatar_girl.png" alt="Avatar" class="w-8 h-8 rounded-full mr-3">
+                                            <div>
+                                                <p class="text-gray-900 font-medium">Antonia Silva</p>
+                                                <p class="text-gray-500 text-sm">Terapia ocupacional</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">9 años</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">Motricidad gruesa</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                        Escuela Amanecer, Temuco
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-24 h-2 bg-gray-200 rounded-full">
+                                                <div class="h-2 bg-green-500 rounded-full" style="width: 71%"></div>
+                                            </div>
+                                            <span class="ml-2 text-sm text-gray-600">71%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <button class="text-gray-400 hover:text-gray-600 p-2 rounded-lg hover:bg-gray-100">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            
+                                <!-- Joaquín Morales -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <img src="assets/img/avatar_boy.png" alt="Avatar" class="w-8 h-8 rounded-full mr-3">
+                                            <div>
+                                                <p class="text-gray-900 font-medium">Joaquín Morales</p>
+                                                <p class="text-gray-500 text-sm">Terapia integral</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">10 años</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Atención</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                        Colegio Los Pinos, Padre Las Casas
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-24 h-2 bg-gray-200 rounded-full">
+                                                <div class="h-2 bg-green-500 rounded-full" style="width: 59%"></div>
+                                            </div>
+                                            <span class="ml-2 text-sm text-gray-600">59%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <button class="text-gray-400 hover:text-gray-600 p-2 rounded-lg hover:bg-gray-100">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

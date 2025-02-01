@@ -1,3 +1,63 @@
+/* Reset CSS moderno */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+html, body {
+    line-height: 1.6;
+    font-family: system-ui, sans-serif;
+    color: #333;
+    background-color: #f9fafb;
+    width: 100%;
+   
+} /* <- Se agregó el cierre de llave correctamente */
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botones */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Formulario */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Variables CSS */
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #E5E7EB;
+    --text-color: #333;
+    --transition-speed: 0.3s;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
 /* Transiciones y efectos */
 #sidebar {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -36,6 +96,37 @@
 #userMenu:hover #userDropdown {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Submenús */
+.has-submenu > a {
+    position: relative;
+}
+
+.submenu-icon {
+    transition: transform 0.2s ease;
+    margin-left: auto;
+}
+
+.submenu-icon.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.has-submenu > ul {
+    display: none;
+    padding-left: 1.5rem;
+}
+
+.has-submenu > ul li a {
+    padding: 0.5rem 1rem;
+    display: block;
+    color: #d1d5db;
+    transition: all 0.2s ease;
+}
+
+.has-submenu > ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
 }
 
 /* Scroll personalizado */

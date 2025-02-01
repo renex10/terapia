@@ -5,6 +5,8 @@ $(document).ready(function() {
             this.checkInitialState();
             this.bindEvents();
             this.initUserMenu();
+            this.initNotificationsMenu(); // Nueva función para manejar notificaciones
+            this.initSubmenus(); // Función para submenús
         },
         
         checkInitialState: function() {
@@ -82,6 +84,48 @@ $(document).ready(function() {
 
             $(window).resize(function() {
                 userDropdown.addClass('hidden');
+            });
+        },
+
+        // Nueva función para manejar el menú de notificaciones
+        initNotificationsMenu: function() {
+            const notificationsButton = $('#notificationsButton');
+            const notificationsDropdown = $('#notificationsDropdown');
+
+            notificationsButton.click(function(e) {
+                e.stopPropagation();
+                notificationsDropdown.toggleClass('hidden');
+            });
+
+            $(document).click(function(e) {
+                if (!$(e.target).closest('#notificationsMenu').length) {
+                    notificationsDropdown.addClass('hidden');
+                }
+            });
+        },
+
+        // Nueva función para manejar submenús
+        initSubmenus: function() {
+            $('.has-submenu > a').click(function(e) {
+                e.preventDefault();
+                const submenu = $(this).next('ul');
+                const icon = $(this).find('.submenu-icon');
+
+                // Cerrar otros submenús abiertos
+                $('.has-submenu > ul').not(submenu).slideUp(200);
+                $('.has-submenu > a').not($(this)).find('.submenu-icon').removeClass('rotate-180');
+
+                // Alternar el submenú actual
+                submenu.slideToggle(200);
+                icon.toggleClass('rotate-180');
+            });
+
+            // Cerrar submenús al hacer clic fuera
+            $(document).click(function(e) {
+                if (!$(e.target).closest('.has-submenu').length) {
+                    $('.has-submenu > ul').slideUp(200);
+                    $('.submenu-icon').removeClass('rotate-180');
+                }
             });
         }
     };
