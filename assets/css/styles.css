@@ -169,3 +169,15 @@ input, button, textarea, select {
         display: none;
     }
 }
+
+
+/* Asegurar que los gráficos no se desborden */
+canvas {
+    max-width: 100%;
+    height: auto !important;
+}
+
+/* Ajustar la altura de los contenedores de gráficos */
+.h-60 {
+    height: 15rem; /* Altura para móviles */
+}

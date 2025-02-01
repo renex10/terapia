@@ -317,14 +317,24 @@
                 </div>
 
                 <!-- Gráfico de progreso -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Progreso Mensual - Lucas Martínez</h3>
-                    <div class="w-full h-80">
-                        <canvas id="progressChart"></canvas>
-                    </div>
-                </div>
+<!-- Contenedor de gráficos -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Gráfico de progreso lineal -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Progreso Mensual - Lucas Martínez</h3>
+        <div class="w-full h-60 md:h-80">
+            <canvas id="progressChart"></canvas>
+        </div>
+    </div>
 
-                <!-- Listado de pacientes -->
+    <!-- Nuevo gráfico circular -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Distribución de Terapias</h3>
+        <div class="w-full h-60 md:h-80">
+            <canvas id="therapyChart"></canvas>
+        </div>
+    </div>
+</div>          <!-- Listado de pacientes -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <div class="px-6 py-4 border-b border-gray-200">
                         <h3 class="text-lg font-semibold text-gray-800">Pacientes Recientes</h3>
@@ -590,68 +600,7 @@
     <script src="assets/js/scripts.js"></script>
 
     <!-- Inicialización del gráfico -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('progressChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
-                    datasets: [{
-                        label: 'Nivel de mejora',
-                        data: [40, 65, 75, 85],
-                        backgroundColor: [
-                            'rgba(99, 102, 241, 0.7)',
-                            'rgba(59, 130, 246, 0.7)',
-                            'rgba(16, 185, 129, 0.7)',
-                            'rgba(139, 92, 246, 0.7)'
-                        ],
-                        borderColor: [
-                            'rgb(99, 102, 241)',
-                            'rgb(59, 130, 246)',
-                            'rgb(16, 185, 129)',
-                            'rgb(139, 92, 246)'
-                        ],
-                        borderWidth: 2,
-                        borderRadius: 8,
-                        barPercentage: 0.7
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Porcentaje de mejora'
-                            },
-                            grid: {
-                                color: '#e5e7eb'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            backgroundColor: '#1f2937',
-                            titleColor: '#f9fafb',
-                            bodyColor: '#f9fafb',
-                            borderColor: '#374151',
-                            borderWidth: 1
-                        }
-                    }
-                }
-            });
-        });
-    </script>
+     <script src="assets/js/grafico.js"></script>
+ 
 </body>
 </html>
