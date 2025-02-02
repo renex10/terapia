@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Control del sidebar
+    // Control del sidebar y menús
     const sidebarControl = {
         init: function() {
             this.checkInitialState();
@@ -91,12 +91,21 @@ $(document).ready(function() {
         initNotificationsMenu: function() {
             const notificationsButton = $('#notificationsButton');
             const notificationsDropdown = $('#notificationsDropdown');
+            const closeNotificationsButton = $('#closeNotifications');
 
+            // Abrir/cerrar notificaciones al hacer clic en el botón de notificaciones
             notificationsButton.click(function(e) {
                 e.stopPropagation();
                 notificationsDropdown.toggleClass('hidden');
             });
 
+            // Cerrar notificaciones al hacer clic en el icono de cierre (X)
+            closeNotificationsButton.click(function(e) {
+                e.stopPropagation();
+                notificationsDropdown.addClass('hidden');
+            });
+
+            // Cerrar notificaciones al hacer clic fuera del área de notificaciones
             $(document).click(function(e) {
                 if (!$(e.target).closest('#notificationsMenu').length) {
                     notificationsDropdown.addClass('hidden');

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Terapias Infantiles</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="bg-gradient-to-b from-gray-800 to-gray-900 text-white w-64 min-h-screen fixed transition-transform duration-300 -translate-x-full md:translate-x-0 z-50 shadow-2xl">
+            <div class="p-6 border-b border-gray-700">
+                <div class="flex items-center space-x-3">
+                    <div class="h-10 w-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-child text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-100">Terapias Infantiles</h2>
+                </div>
+            </div>
+            <nav class="mt-4 px-3">
+                <ul class="space-y-2">
+                    <!-- Inicio -->
+                    <li>
+                        <a href="index.html"
+                            class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-house mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Inicio</span>
+                        </a>
+                    </li>
+
+                    <!-- Evaluaciones -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-clipboard-question mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Evaluaciones</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="crear_evaluacion.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-plus-circle mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Crear Evaluación</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="plantillas_preguntas.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-file-alt mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Plantillas de Preguntas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="historial_evaluaciones.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-history mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Historial de Evaluaciones</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Pacientes -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-users mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Pacientes</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="lista_niños.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-list mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Lista de Niños</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="perfil_niño.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-user mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Perfil del Niño</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-eye mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Observaciones del Niño</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-calendar-check mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Planificaciones
+                                        (Escuela/Hogar)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Observaciones -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-clipboard-list mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Observaciones</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-plus mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Registrar Observación</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-history mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Historial de Observaciones</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Feedback -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-comments mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Feedback</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-paper-plane mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Enviar Feedback a la
+                                        Escuela</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-envelope-open-text mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Revisar Feedback de la
+                                        Escuela</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Documentos -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-folder mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Documentos</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-upload mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Subir Documentos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-file-alt mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Ver Documentos del Niño</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Configuración -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-gear mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Configuración</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-user-tie mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Perfil Profesional</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-key mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Cambiar Contraseña</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main id="content" class="flex-1 md:ml-64 transition-all duration-300 min-h-screen">
+            <!-- Header -->
+            <header class="sticky top-0 bg-white/90 backdrop-blur-lg border-b border-gray-200 z-40">
+                <div class="flex items-center justify-between p-4 gap-4">
+                    <!-- Botón sidebar móvil -->
+                    <button id="sidebarToggle" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <i class="fa-solid fa-bars text-xl text-gray-600" id="menuIcon"></i>
+                        <i class="fa-solid fa-x text-xl text-gray-600 hidden" id="closeIcon"></i>
+                    </button>
+
+                    <!-- Buscador -->
+                    <div class="flex-1 max-w-xl">
+                        <div class="relative">
+                            <input type="text" placeholder="Buscar paciente..."
+                                class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Iconos derecha -->
+                    <div class="flex items-center gap-4">
+                        <!-- Notificaciones -->
+                        <div class="relative" id="notificationsMenu">
+                            <button class="text-gray-600 hover:text-blue-500 relative p-2 rounded-lg hover:bg-gray-100"
+                                id="notificationsButton">
+                                <i class="fa-regular fa-bell text-xl"></i>
+                                <span
+                                    class="absolute -top-1 -right-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs">3</span>
+                            </button>
+
+                            <!-- Dropdown Notificaciones -->
+                            <div class="hidden absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50"
+                                id="notificationsDropdown">
+                                <div class="p-4">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Notificaciones</h4>
+                                    <div class="space-y-3">
+                                        <!-- Notificación importante -->
+                                        <div class="p-3 bg-red-50 rounded-lg border border-red-200">
+                                            <div class="flex items-start gap-3">
+                                                <i class="fa-solid fa-exclamation-triangle text-red-500 mt-1"></i>
+                                                <div>
+                                                    <p class="text-sm font-medium text-gray-800">Reporte: Lucas Martínez
+                                                        no vendrá a terapia</p>
+                                                    <p class="text-xs text-gray-500 mt-1">Hace 1 hora - Terapia de
+                                                        lenguaje</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Otras notificaciones -->
+                                        <div class="p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                            <div class="flex items-start gap-3">
+                                                <i class="fa-regular fa-calendar-check text-gray-500 mt-1"></i>
+                                                <div>
+                                                    <p class="text-sm font-medium text-gray-800">Nueva cita agregada</p>
+                                                    <p class="text-xs text-gray-500 mt-1">Mañana 10:00 AM - Sofia
+                                                        Rodríguez</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menú usuario -->
+                        <div class="relative" id="userMenu">
+                            <button class="flex items-center gap-2 hover:bg-gray-100 rounded-full p-1 transition-colors"
+                                id="userButton">
+                                <img src="assets/img/imagen_perfil.jpg" alt="Avatar"
+                                    class="w-9 h-9 rounded-full border-2 border-blue-200 object-cover">
+                                <span class="text-gray-700 hidden md:inline">Rene Riquelme </span>
+                                <i class="fa-solid fa-chevron-down text-gray-500 text-xs mr-2 hidden md:inline"></i>
+                            </button>
+
+                            <!-- Dropdown Usuario -->
+                            <div class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50"
+                                id="userDropdown">
+                                <div class="p-2">
+                                    <a href="#"
+                                        class="flex items-center px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                        <i class="fa-regular fa-user mr-3 text-gray-500"></i>
+                                        Perfil
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                        <i class="fa-solid fa-gear mr-3 text-gray-500"></i>
+                                        Configuración
+                                    </a>
+                                    <div class="border-t my-2"></div>
+                                    <a href="#"
+                                        class="flex items-center px-3 py-2 text-red-600 hover:bg-gray-100 rounded-lg">
+                                        <i class="fa-solid fa-right-from-bracket mr-3"></i>
+                                        Salir
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- fion del Header -->
+            <!-- Contenido principal -->
+            <div class="p-6 space-y-6">
+
+         
+                <div class="p-6 space-y-6">
+              <!-- Sección de información básica -->
+              <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <!-- Sección de información básica -->
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <!-- Foto del niño -->
+                    <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-200">
+                        <img src="assets/img/imagen_perfil_nino.jpg" alt="Foto del niño" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Información básica -->
+                    <div class="flex-1">
+                        <h1 class="text-2xl font-bold text-gray-800">Pangal Eluney Riquelme Lleufuman</h1>
+                        <p class="text-gray-600"><strong>Fecha de nacimiento:</strong> 04 de julio de 2013</p>
+                        <p class="text-gray-600"><strong>Edad:</strong> 11 años 3 meses</p>
+                        <p class="text-gray-600"><strong>Lugar de nacimiento:</strong> No especificado en el informe</p>
+                        <p class="text-gray-600"><strong>Diagnóstico:</strong> Trastorno del Espectro Autista (TEA)</p>
+                        <p class="text-gray-600"><strong>Descripción:</strong> Niño con dificultades en interacciones sociales recíprocas, lenguaje estereotipado y patrones de interés restringido. Presenta sensibilidad auditiva significativa y manierismos manuales.</p>
+                        <p class="text-gray-600"><strong>Gustos e intereses:</strong> No especificado en el informe, pero se observa interés en actividades sensoriales y rutinas verbales.</p>
+                        <p class="text-gray-600"><strong>Colegio de procedencia:</strong> No especificado en el informe.</p>
+                        <p class="text-gray-600"><strong>Evaluación:</strong> Jueves 17 y jueves 24 de octubre de 2024</p>
+                        <p class="text-gray-600"><strong>Módulo ADOS-2:</strong> Módulo 3 (para niños y adolescentes con fluidez verbal)</p>
+                    </div>
+                </div>
+            
+                <!-- Sección de detonantes de crisis y estado posterior -->
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Detonantes de Crisis y Estado Posterior</h3>
+            
+                    <!-- Detonantes de crisis -->
+                    <div class="mb-8">
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg flex items-start gap-3 mb-4">
+                            <i class="fas fa-exclamation-circle text-yellow-500 text-xl"></i> <!-- Ícono de Font Awesome -->
+                            <div>
+                                <p class="text-yellow-800 font-medium">Detonantes de Crisis</p>
+                                <p class="text-yellow-700 text-sm">Los siguientes estímulos pueden desencadenar crisis en Pangal:</p>
+                            </div>
+                        </div>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Ruidos de la boca (muletillas, sonidos al masticar).</li>
+                            <li>Sonidos repentinos (estornudos, gritos).</li>
+                            <li>Ruidos fuertes o inesperados.</li>
+                            <li>Cambios bruscos en el entorno o rutina.</li>
+                            <li>Situaciones sociales abrumadoras.</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Estado posterior a las crisis -->
+                    <div>
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg flex items-start gap-3 mb-4">
+                            <i class="fas fa-info-circle text-blue-500 text-xl"></i> <!-- Ícono de Font Awesome -->
+                            <div>
+                                <p class="text-blue-800 font-medium">Estado Posterior a las Crisis</p>
+                                <p class="text-blue-700 text-sm">Después de una crisis, Pangal puede presentar los siguientes síntomas:</p>
+                            </div>
+                        </div>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Cansancio físico y mental.</li>
+                            <li>Ardor en la cabeza.</li>
+                            <li>Transpiración excesiva.</li>
+                            <li>Dolor de cabeza.</li>
+                            <li>Rigidez muscular.</li>
+                            <li>Necesidad de estar en silencio y aislarse.</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <!-- Sección de medicamentos -->
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Medicamentos</h3>
+            
+                    <!-- Alerta con ícono -->
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded-lg flex items-start gap-3 mb-6">
+                        <i class="fas fa-pills text-green-500 text-xl"></i> <!-- Ícono de Font Awesome -->
+                        <div>
+                            <p class="text-green-800 font-medium">Medicación Actual</p>
+                            <p class="text-green-700 text-sm">Detalles de los medicamentos que Pangal toma actualmente:</p>
+                        </div>
+                    </div>
+            
+                    <!-- Lista de medicamentos -->
+                    <div class="space-y-4">
+                        <!-- Medicamento 1 -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-gray-800 font-medium">Medicamento: <span class="font-normal">Risperidona</span></p>
+                            <p class="text-gray-700"><strong>Dosis:</strong> 1 mg</p>
+                            <p class="text-gray-700"><strong>Horario:</strong> 1 tableta por la mañana y 1 tableta por la noche.</p>
+                            <p class="text-gray-700"><strong>Neurologólo:</strong> Dr. Juan Pérez</p>
+                            <p class="text-gray-700"><strong>Dirección del neurologólo:</strong> Av. Principal 123, Santiago, Chile.</p>
+                            <p class="text-gray-700"><strong>Contacto:</strong> +56 9 8765 4321 | <a href="https://www.neurologo.cl" class="text-blue-500 hover:underline">www.neurologo.cl</a></p>
+                        </div>
+            
+                        <!-- Medicamento 2 -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-gray-800 font-medium">Medicamento: <span class="font-normal">Melatonina</span></p>
+                            <p class="text-gray-700"><strong>Dosis:</strong> 3 mg</p>
+                            <p class="text-gray-700"><strong>Horario:</strong> 1 tableta antes de dormir.</p>
+                            <p class="text-gray-700"><strong>Neurologólo:</strong> Dr. Juan Pérez</p>
+                            <p class="text-gray-700"><strong>Dirección del neurologólo:</strong> Av. Principal 123, Santiago, Chile.</p>
+                            <p class="text-gray-700"><strong>Contacto:</strong> +56 9 8765 4321 | <a href="https://www.neurologo.cl" class="text-blue-500 hover:underline">www.neurologo.cl</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <!-- Sección de gráficos -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Progreso Mensual</h3>
+                            <div class="w-full h-60 md:h-80">
+                                <canvas id="progressChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Distribución de Terapias</h3>
+                            <div class="w-full h-60 md:h-80">
+                                <canvas id="therapyChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección de actualizaciones -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Actualizaciones Recientes</h2>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <p class="text-sm text-gray-700"><i
+                                        class="fas fa-school mr-2 text-blue-500"></i>Participó en festival musical
+                                    escolar</p>
+                                <p class="text-xs text-gray-500 mt-1">18/10/2023</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <p class="text-sm text-gray-700"><i class="fas fa-home mr-2 text-green-500"></i>Nueva
+                                    rutina de ejercicios en casa</p>
+                                <p class="text-xs text-gray-500 mt-1">15/10/2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección de observaciones -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Observaciones Registradas</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Contenido de observaciones... -->
+                        </div>
+                    </div>
+
+                    <!-- Sección de feedback -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Comunicaciones Recientes</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Contenido de feedback... -->
+                        </div>
+                    </div>
+
+<
+
+
+
+                    <!-- Sección de Exámenes Diagnósticos -->
+                    <a href="examen-ados-2.html"
+                        class="mt-6 px-6 py-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 transition-colors duration-300 inline-block text-center">
+                        Ver Examen ADOS-2
+                    </a>
+
+
+                    <!-- Resto de secciones (Gráficos, Observaciones, etc.) -->
+                    <!-- ... (mantener las secciones anteriores del perfil) ... -->
+
+                </div>
+        </main>
+
+        <!-- Overlay móvil -->
+        <div id="sidebarOverlay" class="hidden fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Scripts personalizados -->
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/grafico.js"></script>
+
+
+</body>
+
+</html>

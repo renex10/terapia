@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Terapias Infantiles</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="bg-gradient-to-b from-gray-800 to-gray-900 text-white w-64 min-h-screen fixed transition-transform duration-300 -translate-x-full md:translate-x-0 z-50 shadow-2xl">
+            <div class="p-6 border-b border-gray-700">
+                <div class="flex items-center space-x-3">
+                    <div class="h-10 w-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-child text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-100">Terapias Infantiles</h2>
+                </div>
+            </div>
+            <nav class="mt-4 px-3">
+                <ul class="space-y-2">
+                    <!-- Inicio -->
+                    <li>
+                        <a href="index.html"
+                            class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-house mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Inicio</span>
+                        </a>
+                    </li>
+
+                    <!-- Evaluaciones -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-clipboard-question mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Evaluaciones</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="crear_evaluacion.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-plus-circle mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Crear Evaluación</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="plantillas_preguntas.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-file-alt mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Plantillas de Preguntas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="historial_evaluaciones.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-history mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Historial de Evaluaciones</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Pacientes -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-users mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Pacientes</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="lista_niños.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-list mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Lista de Niños</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="perfil_niño.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-user mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Perfil del Niño</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="observacion_niño.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-eye mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Observaciones del Niño</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="planificacion_escolar.html"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-calendar-check mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Planificaciones
+                                        (Escuela/Hogar)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Observaciones -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-clipboard-list mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Observaciones</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-plus mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Registrar Observación</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-history mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Historial de Observaciones</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Feedback -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-comments mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Feedback</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-paper-plane mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Enviar Feedback a la
+                                        Escuela</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-envelope-open-text mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Revisar Feedback de la
+                                        Escuela</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Documentos -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-folder mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Documentos</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-upload mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Subir Documentos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-file-alt mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Ver Documentos del Niño</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Configuración -->
+                    <li class="has-submenu">
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700 rounded-lg transition-all group">
+                            <i
+                                class="fa-solid fa-gear mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                            <span class="text-gray-300 group-hover:text-white">Configuración</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 ml-auto submenu-icon"></i>
+                        </a>
+                        <ul class="pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-user-tie mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Perfil Profesional</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 hover:bg-gray-700 rounded-lg transition-all group">
+                                    <i
+                                        class="fa-solid fa-key mr-3 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                                    <span class="text-gray-300 group-hover:text-white">Cambiar Contraseña</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main id="content" class="flex-1 md:ml-64 transition-all duration-300 min-h-screen">
+            <!-- Header -->
+            <header class="sticky top-0 bg-white/90 backdrop-blur-lg border-b border-gray-200 z-40">
+                <div class="flex items-center justify-between p-4 gap-4">
+                    <!-- Botón sidebar móvil -->
+                    <button id="sidebarToggle" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <i class="fa-solid fa-bars text-xl text-gray-600" id="menuIcon"></i>
+                        <i class="fa-solid fa-x text-xl text-gray-600 hidden" id="closeIcon"></i>
+                    </button>
+
+                    <!-- Buscador -->
+                    <div class="flex-1 max-w-xl">
+                        <div class="relative">
+                            <input type="text" placeholder="Buscar paciente..."
+                                class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Iconos derecha -->
+                    <div class="flex items-center gap-4">
+                        <!-- Notificaciones -->
+                        <div class="relative" id="notificationsMenu">
+                            <button class="text-gray-600 hover:text-blue-500 relative p-2 rounded-lg hover:bg-gray-100"
+                                id="notificationsButton">
+                                <i class="fa-regular fa-bell text-xl"></i>
+                                <span
+                                    class="absolute -top-1 -right-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs">3</span>
+                            </button>
+
+                            <!-- Dropdown Notificaciones -->
+                            <div class="hidden absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50"
+                                id="notificationsDropdown">
+                                <div class="p-4">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Notificaciones</h4>
+                                    <div class="space-y-3">
+                                        <!-- Notificación importante -->
+                                        <div class="p-3 bg-red-50 rounded-lg border border-red-200">
+                                            <div class="flex items-start gap-3">
+                                                <i class="fa-solid fa-exclamation-triangle text-red-500 mt-1"></i>
+                                                <div>
+                                                    <p class="text-sm font-medium text-gray-800">Reporte: Lucas Martínez
+                                                        no vendrá a terapia</p>
+                                                    <p class="text-xs text-gray-500 mt-1">Hace 1 hora - Terapia de
+                                                        lenguaje</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Otras notificaciones -->
+                                        <div class="p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                            <div class="flex items-start gap-3">
+                                                <i class="fa-regular fa-calendar-check text-gray-500 mt-1"></i>
+                                                <div>
+                                                    <p class="text-sm font-medium text-gray-800">Nueva cita agregada</p>
+                                                    <p class="text-xs text-gray-500 mt-1">Mañana 10:00 AM - Sofia
+                                                        Rodríguez</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menú usuario -->
+                        <div class="relative" id="userMenu">
+                            <button class="flex items-center gap-2 hover:bg-gray-100 rounded-full p-1 transition-colors"
+                                id="userButton">
+                                <img src="assets/img/imagen_perfil.jpg" alt="Avatar"
+                                    class="w-9 h-9 rounded-full border-2 border-blue-200 object-cover">
+                                <span class="text-gray-700 hidden md:inline">Rene Riquelme </span>
+                                <i class="fa-solid fa-chevron-down text-gray-500 text-xs mr-2 hidden md:inline"></i>
+                            </button>
+
+                            <!-- Dropdown Usuario -->
+                            <div class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50"
+                                id="userDropdown">
+                                <div class="p-2">
+                                    <a href="#"
+                                        class="flex items-center px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                        <i class="fa-regular fa-user mr-3 text-gray-500"></i>
+                                        Perfil
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                        <i class="fa-solid fa-gear mr-3 text-gray-500"></i>
+                                        Configuración
+                                    </a>
+                                    <div class="border-t my-2"></div>
+                                    <a href="#"
+                                        class="flex items-center px-3 py-2 text-red-600 hover:bg-gray-100 rounded-lg">
+                                        <i class="fa-solid fa-right-from-bracket mr-3"></i>
+                                        Salir
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contenido principal -->
+
+
+            <div class="p-6 space-y-6">
+                <!-- Sección de Exámenes Diagnósticos -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Evaluación Diagnóstica - ADOS-2/ADI-R</h2>
+
+                    <div class="bg-blue-50 rounded-xl shadow-sm border border-blue-200 p-6 mb-8">
+                        <div class="text-center">
+                            <h2 class="text-2xl font-bold text-blue-800 mb-2">CENTRO DE ESTÍMULACIÓN Y REHABILITACIÓN
+                            </h2>
+                            <p class="text-blue-600"><i class="fas fa-envelope mr-2"></i>EXTROTERAPIAS@GMAIL.COM</p>
+                            <p class="text-blue-600"><i class="fas fa-phone mr-2"></i>+56 9 7576 1672</p>
+                            <p class="text-blue-600"><i class="fas fa-map-marker-alt mr-2"></i>Irarrával 2821, oficina
+                                606. Ñuñoa.</p>
+                        </div>
+                    </div>
+
+                    <!-- Datos Básicos del Paciente -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <p class="text-gray-600"><strong>Nombre:</strong> Pangal Eluney Riquelme LLeufuman</p>
+                            <p class="text-gray-600"><strong>Fecha de Nacimiento:</strong> 04 de julio de 2013</p>
+                            <p class="text-gray-600"><strong>Edad:</strong> 11 años 3 meses</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600"><strong>Fecha de Evaluación:</strong> 17 y 24 de octubre de 2024
+                            </p>
+                            <p class="text-gray-600"><strong>Módulo ADOS-2:</strong> Módulo 3</p>
+                        </div>
+                    </div>
+
+                    <!-- Resultados ADI-R -->
+                    <div class="mb-8">
+                        <h3 class="text-xl text-center font-semibold text-gray-800 mb-3">Resultados ADI-R</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full border-collapse">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="border border-gray-200 px-4 py-2 text-left">Área Evaluada</th>
+                                        <th class="border border-gray-200 px-4 py-2">Puntaje</th>
+                                        <th class="border border-gray-200 px-4 py-2">Puntaje Corte</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-200 px-4 py-2">Interacción Social</td>
+                                        <td class="border border-gray-200 px-4 py-2 text-center">15</td>
+                                        <td class="border border-gray-200 px-4 py-2 text-center">10</td>
+                                    </tr>
+                                    <tr class="bg-gray-50">
+                                        <td class="border border-gray-200 px-4 py-2">Comunicación</td>
+                                        <td class="border border-gray-200 px-4 py-2 text-center">10</td>
+                                        <td class="border border-gray-200 px-4 py-2 text-center">8</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-200 px-4 py-2">Conductas Restringidas</td>
+                                        <td class="border border-gray-200 px-4 py-2 text-center">11</td>
+                                        <td class="border border-gray-200 px-4 py-2 text-center">3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Observaciones Clínicas -->
+                    <div class="space-y-4">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Hallazgos Relevantes</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li class="text-gray-700">Lenguaje estereotipado con uso de ecolalia</li>
+                                <li class="text-gray-700">Dificultad en interacciones sociales recíprocas</li>
+                                <li class="text-gray-700">Patrones de interés restringido</li>
+                                <li class="text-gray-700">Sensibilidad auditiva significativa</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h4 class="text-lg font-semibold text-blue-800 mb-2">Conclusiones Diagnósticas</h4>
+                            <p class="text-gray-700">El perfil del paciente cumple con los criterios diagnósticos para
+                                <strong>Trastorno del Espectro Autista (TEA)</strong> según:</p>
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>Puntajes ADI-R superiores al corte en todas las áreas</li>
+                                <li>Observación conductual consistente con ADOS-2</li>
+                                <li>Historia de desarrollo compatible</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Detalles ADOS-2 -->
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Observaciones ADOS-2</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Comunicación</h4>
+                                <p class="text-sm text-gray-700">Uso limitado de gestos comunicativos<br>
+                                    Entonación peculiar<br>
+                                    Dificultad en conversación recíproca</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Interacción Social</h4>
+                                <p class="text-sm text-gray-700">Contacto visual modulado pobremente<br>
+                                    Iniciaciones sociales inusuales<br>
+                                    Disfrute compartido limitado</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Conductas</h4>
+                                <p class="text-sm text-gray-700">Manierismos manuales<br>
+                                    Patrones de desplazamiento repetitivos<br>
+                                    Intereses sensoriales inusuales</p>
+                            </div>
+                        </div>
+                    </div>
+
+            
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- Overlay móvil -->
+            <div id="sidebarOverlay" class="hidden fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Scripts personalizados -->
+    <script src="assets/js/scripts.js"></script>
+  
+
+
+</body>
+
+</html>
