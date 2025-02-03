@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiverMind - Apoyo para el Autismo</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- CSS Personalizado -->
+    <link href="assets/css/front.css" rel="stylesheet">
+</head>
+<body class="font-sans overflow-x-hidden">
+
+<!-- Navigation -->
+<nav id="mainNav" class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center flex-shrink-0">
+                <div class="p-2 bg-white/30 shadow-lg rounded-lg border border-white/20 transition-all hover:bg-white/40">
+                    <img src="assets/img/logo-diver-mind.svg" alt="DiverMind" 
+                         class="h-10 md:h-12 w-auto transition-transform duration-300 hover:scale-105">
+                </div>
+            </div>
+
+            <!-- Menú Desktop -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="nav-link">Inicio</a>
+                <a href="#" class="nav-link">Servicios</a>
+                <a href="#" class="nav-link">Cómo funciona</a>
+                <a href="#" class="nav-link">Blog</a>
+                <a href="#" class="nav-link">Contacto</a>
+                <button class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-full transition-all">
+                    Login
+                </button>
+            </div>
+
+            <!-- Menú Mobile -->
+            <button id="mobileMenuBtn" class="md:hidden text-white text-2xl p-2 hover:bg-white/10 rounded-lg">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden fixed w-full z-40 hidden">
+    <div class="container mx-auto px-4 py-4">
+        <a href="#" class="block py-2">Inicio</a>
+        <a href="#" class="block py-2">Servicios</a>
+        <a href="#" class="block py-2">Cómo funciona</a>
+        <a href="#" class="block py-2">Blog</a>
+        <a href="#" class="block py-2">Contacto</a>
+        <button class="mt-4 w-full bg-purple-500/20 text-white px-6 py-2 rounded-full">
+            Login
+        </button>
+    </div>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden fixed w-full bg-white/95 backdrop-blur-lg z-40 hidden shadow-lg">
+    <div class="container mx-auto px-4 py-4">
+        <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">Inicio</a>
+        <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">Servicios</a>
+        <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">como funciona</a>
+        <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">Blog</a>
+        <a href="#" class="block py-2 text-gray-800 hover:text-blue-600">Contacto</a>
+        <button class="mt-4 w-full bg-blue-600 text-white px-6 py-2 rounded-full">
+            Login
+        </button>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center">
+    <!-- Background Image -->
+    <div class="hero-bg"></div>
+
+    <!-- Contenido -->
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="glass-container bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-8 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Texto -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                        Descubre un nuevo <span class="text-blue-200">mundo de posibilidades</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-200 font-light mb-8">
+                        Apoyo especializado para el desarrollo integral de niños dentro del espectro autista
+                    </h2>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                        Comenzar Ahora
+                    </button>
+                </div>
+
+                <!-- Ilustración -->
+                <div class="hidden md:block">
+                    <img src="assets/img/hero_picture.svg" alt="Apoyo infantil" class="w-full h-auto animate-float">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Sección de Características -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Columna Izquierda: Imagen -->
+            <div class="flex justify-center">
+                <img src="assets/img/laptop.png" alt="DiverMind Software" 
+                     class="w-full max-w-md transform transition-all duration-500 hover:scale-105">
+            </div>
+
+            <!-- Columna Derecha: Características -->
+            <div class="space-y-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+                    Características de <span class="text-blue-600">DiverMind</span>
+                </h2>
+                
+                <!-- Lista de Características -->
+                <div class="space-y-6">
+                    <!-- Característica 1 -->
+                    <div class="feature-item p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Seguimiento Personalizado</h3>
+                        <p class="text-gray-600">
+                            Monitorea el progreso del niño con herramientas especializadas para el desarrollo social, emocional y cognitivo.
+                        </p>
+                    </div>
+
+                    <!-- Característica 2 -->
+                    <div class="feature-item p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Evaluaciones Integrales</h3>
+                        <p class="text-gray-600">
+                            Realiza evaluaciones completas con tests adaptados a las necesidades del niño, incluyendo opciones de audio y texto.
+                        </p>
+                    </div>
+
+                    <!-- Característica 3 -->
+                    <div class="feature-item p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Comunicación Colaborativa</h3>
+                        <p class="text-gray-600">
+                            Conecta a terapeutas, familias y profesores en una plataforma unificada para un seguimiento coordinado.
+                        </p>
+                    </div>
+
+                    <!-- Característica 4 -->
+                    <div class="feature-item p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Recursos Educativos</h3>
+                        <p class="text-gray-600">
+                            Accede a guías, herramientas y materiales especializados para apoyar el desarrollo del niño.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Sección Descripción + Características con Iconos -->
+<section class="py-20 bg-gray-50/50">
+    <div class="container mx-auto px-4">
+        <!-- Encabezado -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                Transformando el apoyo al autismo con <span class="text-blue-600">DiverMind</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                DiverMind es una plataforma integral que combina tecnología avanzada con metodologías especializadas 
+                para ofrecer seguimiento personalizado, herramientas colaborativas y recursos adaptados a las 
+                necesidades únicas de cada niño dentro del espectro autista.
+            </p>
+        </div>
+
+        <!-- Grid de Características -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Característica 1 -->
+            <div class="feature-card glass-container p-8 text-center rounded-xl transition-all">
+                <div class="icon-container mb-6">
+                    <i class="fas fa-brain text-5xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Desarrollo Cognitivo</h3>
+                <p class="text-gray-600">Herramientas para estimular el pensamiento lógico y la resolución de problemas</p>
+            </div>
+
+            <!-- Característica 2 -->
+            <div class="feature-card glass-container p-8 text-center rounded-xl transition-all">
+                <div class="icon-container mb-6">
+                    <i class="fas fa-comments text-5xl text-green-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Comunicación Efectiva</h3>
+                <p class="text-gray-600">Sistema de apoyo para el desarrollo del lenguaje verbal y no verbal</p>
+            </div>
+
+            <!-- Característica 3 -->
+            <div class="feature-card glass-container p-8 text-center rounded-xl transition-all">
+                <div class="icon-container mb-6">
+                    <i class="fas fa-hands-helping text-5xl text-purple-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Apoyo Colaborativo</h3>
+                <p class="text-gray-600">Plataforma unificada para familias, terapeutas y educadores</p>
+            </div>
+
+            <!-- Característica 4 -->
+<div class="feature-card glass-container p-8 text-center rounded-xl transition-all">
+    <div class="icon-container mb-6">
+        <i class="fas fa-heartbeat text-5xl text-pink-500"></i>
+    </div>
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Seguimiento Emocional</h3>
+    <p class="text-gray-600">Registro y análisis de estados emocionales con alertas tempranas</p>
+</div>
+
+<!-- Característica 5 -->
+<div class="feature-card glass-container p-8 text-center rounded-xl transition-all">
+    <div class="icon-container mb-6">
+        <i class="fas fa-tools text-5xl text-orange-500"></i>
+    </div>
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Herramientas Adaptables</h3>
+    <p class="text-gray-600">Personalización de recursos según necesidades individuales</p>
+</div>
+
+<!-- Característica 6 -->
+<div class="feature-card glass-container p-8 text-center rounded-xl transition-all">
+    <div class="icon-container mb-6">
+        <i class="fas fa-chart-line text-5xl text-teal-500"></i>
+    </div>
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Progreso Cuantificable</h3>
+    <p class="text-gray-600">Reportes detallados y métricas de desarrollo evolutivo</p>
+</div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Sección de Impacto -->
+<section class="relative py-20 bg-blue-50/50">
+    <!-- Fondo con imagen de niños -->
+    <div class="absolute inset-0 z-0">
+        <img src="assets/img/kids.png" alt="Niños curiosos y contentos" 
+             class="w-full h-full object-cover opacity-20">
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <!-- Encabezado -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                Transformando vidas, un paso a la vez
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                DiverMind no solo es una herramienta, es un aliado en el desarrollo integral de los niños. 
+                Descubre cómo estamos marcando la diferencia.
+            </p>
+        </div>
+
+        <!-- Grid de Estadísticas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <!-- Estadística 1 -->
+            <div class="text-center">
+                <h3 class="text-5xl font-bold text-blue-600 mb-4">+95%</h3>
+                <p class="text-gray-600">Mejora en la comunicación</p>
+            </div>
+
+            <!-- Estadística 2 -->
+            <div class="text-center">
+                <h3 class="text-5xl font-bold text-blue-600 mb-4">+80%</h3>
+                <p class="text-gray-600">Familias satisfechas</p>
+            </div>
+
+            <!-- Estadística 3 -->
+            <div class="text-center">
+                <h3 class="text-5xl font-bold text-blue-600 mb-4">+120%</h3>
+                <p class="text-gray-600">Progreso en habilidades sociales</p>
+            </div>
+        </div>
+
+        <!-- Testimonios -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Testimonio 1 -->
+            <div class="p-8 bg-white rounded-xl shadow-md">
+                <p class="text-gray-600 italic mb-4">
+                    "DiverMind ha sido una bendición para nuestra familia. Ahora podemos entender mejor 
+                    las necesidades de nuestro hijo y apoyarlo de manera efectiva."
+                </p>
+                <div class="flex items-center">
+                    <img src="assets/img/testimonial1.jpg" alt="Testimonio 1" 
+                         class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold text-gray-800">María González</h4>
+                        <p class="text-sm text-gray-500">Madre de un niño con autismo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div class="p-8 bg-white rounded-xl shadow-md">
+                <p class="text-gray-600 italic mb-4">
+                    "Como terapeuta, DiverMind me ha permitido optimizar mi trabajo y ofrecer un 
+                    seguimiento más personalizado a mis pacientes."
+                </p>
+                <div class="flex items-center">
+                    <img src="assets/img/testimonial2.jpg" alt="Testimonio 2" 
+                         class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold text-gray-800">Carlos Martínez</h4>
+                        <p class="text-sm text-gray-500">Terapeuta especializado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Llamado a la Acción -->
+        <div class="text-center mt-16">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                ¿Listo para transformar el futuro de tu hijo?
+            </h3>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                Comienza Ahora
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(document).ready(function() {
+        // Animación de números
+        $('.statistic h3').each(function() {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function(now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    });
+    </script>
+
+<script>
+$(document).ready(function() {
+    // Efecto hover para las tarjetas
+    $('.feature-card').hover(
+        function() { // mouse enter
+            $(this).css({
+                'transform': 'scale(1.05)',
+                'box-shadow': '0 10px 30px rgba(0,0,0,0.1)'
+            });
+        },
+        function() { // mouse leave
+            $(this).css({
+                'transform': 'scale(1)',
+                'box-shadow': '0 4px 15px rgba(0,0,0,0.05)'
+            });
+        }
+    );
+});
+</script>
+
+<script>
+    // Scroll Navigation Effect
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 50){
+            $('#mainNav').addClass('scrolled');
+        } else {
+            $('#mainNav').removeClass('scrolled');
+        }
+    });
+
+    // Mobile Menu Toggle
+    $('#mobileMenuBtn').click(function(){
+        $('#mobileMenu').slideToggle(300);
+        $(this).find('i').toggleClass('fa-bars fa-times');
+    });
+
+    // Cerrar menú al cambiar a pantalla grande
+    $(window).resize(function() {
+        if($(window).width() >= 768) {
+            $('#mobileMenu').slideUp(300);
+            $('#mobileMenuBtn i').removeClass('fa-times').addClass('fa-bars');
+        }
+    });
+</script>
+
+</body>
+</html>
